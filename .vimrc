@@ -3,33 +3,45 @@
 call plug#begin('~/.vim/plugged')
 
 " Load plugins here
-
+" Add Go vim
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Add tcomment
 Plug 'tomtom/tcomment_vim'
+"Add sensible
 Plug 'tpope/vim-sensible'
+"Add syntastic
 Plug 'vim-syntastic/syntastic'
 Plug 'altercation/vim-colors-solarized'
+"Add lightline
 Plug 'vim-airline/vim-airline-themes'
+"Add lightline
 Plug 'davidhalter/jedi-vim'
+"Add lightline
 Plug 'preservim/nerdcommenter'
 "Plug 'Shougo/deoplete.nvim'
+"Add deoplete
 Plug 'zchee/deoplete-jedi'
+"Add signify
 Plug 'mhinz/vim-signify'
+"Add nerdtree
 Plug 'preservim/nerdtree'
+"Add fugitive
 Plug 'tpope/vim-fugitive'
+"Add rhubarb
 Plug 'tpope/vim-rhubarb'
 
-" lightline
+"Add lightline
 Plug 'itchyny/lightline.vim'
 
-" fzf
+"Add fzf
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Ack allows you to search within vim
+"Add  Ack to allow  search within vim
 Plug 'mileszs/ack.vim'
 
+"
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
