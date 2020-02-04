@@ -107,3 +107,8 @@ set ruler
 
 
 map c I//<Space><ESC>=<CR>
+
+
+" Custom commands
+" same as running 'source %'
+command! RefreshConfig source $MYVIMRC
