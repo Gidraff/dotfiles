@@ -3,6 +3,10 @@
 call plug#begin('~/.vim/plugged')
 
 " Load plugins here
+" Add neodark
+Plug 'KeitaNakamura/neodark.vim'
+" Add night owl
+Plug 'haishanh/night-owl.vim'
 " Add Go vim
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "Add tcomment
@@ -58,6 +62,9 @@ if has('python3')
   silent! python3 1
 endif
 
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 " Show commits for every source line
 nnoremap <Leader>gb :Gblame<CR> " git blame
@@ -71,22 +78,21 @@ set laststatus=2
 if !has('gui_running')
   set t_Co=256
 endif
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
+let g:lightline = { 'colorscheme': 'neodark' }
 
 " Nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
-
+map c I//<Space><ESC>=<CR>
 
 " Use deoplete auto_completion
 "let g:deoplete#enable_at_startup = 1
 
 " Airline theme
-let g:airline_theme='deus'
-" colorscheme dracula
+"let g:airline_theme='one'
+syntax enable
+colorscheme night-owl
 
 "syntastic
 set statusline+=%#warningmsg#
@@ -104,11 +110,4 @@ syntax on
 set nu
 set wrapmargin=5
 set ruler
-
-
-map c I//<Space><ESC>=<CR>
-
-
-" Custom commands
-" same as running 'source %'
 command! RefreshConfig source $MYVIMRC
