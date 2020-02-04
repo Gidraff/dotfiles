@@ -3,6 +3,12 @@
 call plug#begin('~/.vim/plugged')
 
 " Load plugins here
+" Install EditorConfig
+Plug 'editorconfig/editorconfig-vim'
+" Install devicons
+Plug 'ryanoasis/vim-devicons'
+" Install Emmet
+Plug 'mattn/emmet-vim'
 " Add neodark
 Plug 'KeitaNakamura/neodark.vim'
 " Add night owl
@@ -78,7 +84,7 @@ set laststatus=2
 if !has('gui_running')
   set t_Co=256
 endif
-let g:lightline = { 'colorscheme': 'neodark' }
+let g:lightline = { 'colorscheme': 'wombat' }
 
 " Nerdtree
 autocmd StdinReadPre * let s:std_in=1
@@ -90,14 +96,15 @@ map c I//<Space><ESC>=<CR>
 "let g:deoplete#enable_at_startup = 1
 
 " Airline theme
-"let g:airline_theme='one'
+let g:airline_theme='one'
 syntax enable
-colorscheme night-owl
+"colorscheme dracula
 
 "syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+set encoding=UTF-8
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -106,8 +113,19 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:netrw_banner = 0
 
+" Ensure plugins works well with Fugitive
+" Avoid loading EditorConfig for any remote files
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+" Resolves conflict of trailing whitespace
+let g:EditorConfig_disable_rules = ['trim_trailing_whitespace']
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+
 syntax on
 set nu
 set wrapmargin=5
 set ruler
+
+" User defined ex commands
 command! RefreshConfig source $MYVIMRC
