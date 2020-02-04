@@ -104,3 +104,6 @@ syntax on
 set nu
 set wrapmargin=5
 set ruler
+
+
+map c I//<Space><ESC>=<CR>
