@@ -46,7 +46,7 @@ export PATH=$PATH:$(which apm)
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
-export EDITOR=oni
+
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
 
