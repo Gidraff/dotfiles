@@ -85,6 +85,10 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set encoding=UTF-8
+set statusline+=%{FugitiveStatusline()}
+set statusline+=%{StatuslineGitBranch()}
+let b:git_clean = system(printf("cd %s && git status --porcelain 2>/dev/null", expand('%:p:h:S'))) is# ''
+let &statusline = '%{get(b:, "git_clean", "") ? "[clean]" : "[changed]"}'
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -92,8 +96,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:netrw_banner = 0
-
-
 set termguicolors
 
 " the configuration options should be placed before `colorscheme miramare`
