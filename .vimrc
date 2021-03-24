@@ -21,6 +21,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tomtom/tcomment_vim'
 "Add sensible
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
 "Add syntastic
 Plug 'vim-syntastic/syntastic'
 Plug 'altercation/vim-colors-solarized'
