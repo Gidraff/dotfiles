@@ -32,11 +32,11 @@ Plug 'preservim/nerdcommenter'
 Plug 'mhinz/vim-signify'
 "Add nerdtree
 Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
 "Add fugitive
 Plug 'tpope/vim-fugitive'
 "Add rhubarb
 Plug 'tpope/vim-rhubarb'
-
 Plug 'itchyny/lightline.vim'
 
 "Add fzf
@@ -46,6 +46,26 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 "Add  Ack to allow  search within vim
 Plug 'mileszs/ack.vim'
+
+" Nginx plugin
+Plug 'chr4/nginx.vim'
+
+" monokai
+Plug 'patstockwell/vim-monokai-tasty'
+Plug 'pearofducks/ansible-vim'
+Plug 'vim-scripts/groovy.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
+Plug 'hashivim/vim-terraform'
+Plug 'ekalinin/dockerfile.vim'
+Plug 'elzr/vim-json'
+Plug 'stephpy/vim-yaml'
+Plug 'tpope/vim-rails'
+Plug 'vim-scripts/bash-support.vim'
+Plug 'moll/vim-node'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'svermeulen/vim-yoink'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 
@@ -64,6 +84,7 @@ nnoremap <Leader>gb :Gbrowse<CR>>
 vnoremap <Leader>gb :Gbrowse<CR>
 nnoremap <Leader>gb :Gw<CR> " git add file
 
+
 " lightline statusbar
 set laststatus=2
 if !has('gui_running')
@@ -76,9 +97,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 map c I//<Space><ESC>=<CR>
 " Airline theme
-let g:airline_theme='miramare'
+let g:airline_theme=''
 syntax enable
-"colorscheme dracula
+colorscheme vim-monokai-tasty 
 
 "syntastic
 set statusline+=%#warningmsg#
