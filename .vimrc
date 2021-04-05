@@ -1,10 +1,6 @@
 " Specify a directory for plugins
-
 call plug#begin('~/.vim/plugged')
-
 " Load plugins here
-" Install EditorConfig
-" Install miramare theme
 Plug 'franbach/miramare'
 Plug 'editorconfig/editorconfig-vim'
 " Install devicons
