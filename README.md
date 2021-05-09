@@ -1,7 +1,7 @@
 ## Dotfiles
 
 ### Contents
-The repo was initaily meant for hosting vim files. Hoever, I diversified it to host other config and dotfiles (tmux.conf, vimrc
+The repo was initaily meant for hosting vim files. However, I diversified it to host other config and dotfiles (tmux.conf, vimrc
 e.t.c)
 
 ### Getting started.
