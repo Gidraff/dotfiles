@@ -1,10 +1,14 @@
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 " Load plugins here
+" Use release branch (recommend)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'franbach/miramare'
 Plug 'editorconfig/editorconfig-vim'
 " Install devicons
 Plug 'ryanoasis/vim-devicons'
+" Install vim-helm
+Plug 'towolf/vim-helm'
 " Install Emmet
 Plug 'mattn/emmet-vim'
 " Add neodark
