@@ -1,10 +1,8 @@
 ## Dotfiles
 
 ### Contents
-the repo was initaily meant for hosting vim files.
-I however switched to using neovim and hence the neovim folder.
-The .vim folder has a file containing plugins i use with vim. 
-The neovim folder is all you need if you will be working with neovim.
+The repo was initaily meant for hosting vim files. Hoever, I diversified it to host other config and dotfiles (tmux.conf, vimrc
+e.t.c)
 
 ### Getting started.
 After cloning the repo, you will need to create a symlink to point to the
