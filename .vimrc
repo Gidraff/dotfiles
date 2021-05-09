@@ -37,6 +37,9 @@ Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 "Add rhubarb
 Plug 'tpope/vim-rhubarb'
+
+Plug 'othree/xml.vim'
+"Add lightline
 Plug 'itchyny/lightline.vim'
 
 "Add fzf
@@ -66,6 +69,7 @@ Plug 'moll/vim-node'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'svermeulen/vim-yoink'
 Plug 'pangloss/vim-javascript'
+
 call plug#end()
 
 
@@ -97,9 +101,15 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 map c I//<Space><ESC>=<CR>
 " Airline theme
-let g:airline_theme=''
-syntax enable
-colorscheme vim-monokai-tasty 
+
+"let g:airline_theme='one'
+"syntax enable
+colorscheme onedark
+"highlight Normal ctermbg=None
+"highlight LineNr ctermfg=DarkGrey
+
+" Powerline
+let g:airline_powerline_fonts = 1
 
 "syntastic
 set statusline+=%#warningmsg#
@@ -131,6 +141,11 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " Resolves conflict of trailing whitespace
 let g:EditorConfig_disable_rules = ['trim_trailing_whitespace']
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+
+set rtp+=/usr/local/opt/fzf
 
 syntax on
 set nu
