@@ -72,8 +72,6 @@ Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
-
-
 if has('python3')
   silent! python3 1
 endif

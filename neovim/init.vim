@@ -8,13 +8,41 @@ syntax on
 "set rtp+=~/.vim/bundle/Vundle.vim
 
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'scrooloose/nerdtree', {'on': 'nerdtreetoggle'}
-"silence  powerline error on python 3.7
-"if has('python3')
-"  silent! python3 1
-"endif
 
-so  ~/.config/nvim//plugins.vim
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'bling/vim-airline'
+Plug 'morhetz/gruvbox'
+Plug 'jiangmiao/auto-pairs'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'zchee/deoplete-jedi'
+Plug 'mattn/emmet-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'Yggdroot/indentLine'
+Plug 'avelino/vim-bootstrap-updater'
+" javascript
+Plug 'jelera/vim-javascript-syntax'
+" python
+Plug 'davidhalter/jedi-vim'
+" ruby
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-projectionist'
+Plug 'thoughtbot/vim-rspec'
+Plug 'ajvargo/ruby-refactor'  
+
+"silence  powerline error on python 3.7
+if has('python3')
+  silent! python3 1
+endif
+
+so  ~/.config/nvim/plugins.vim
+
 
 call plug#end()            " required
 let g:NERDTreeIndicatorMapCustom = {
@@ -30,7 +58,6 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 "filetype plugin indent on    " required
-
 let mapleader=',' "make comma the mapleader
 "show filename on status line
 
@@ -239,20 +266,8 @@ let g:gutentags_cache_dir = expand('~/.cache/tags')
 let g:UltiSnipsExpandTrigger='<c-l>'
 let g:UltiSnipsJumpForwardTrigger='<c-b>'
 let g:UltiSnipsJumpBackwardTrigger='<c-z>'
-
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_completion_start_length = 3
-let g:deoplete#file#enable_buffer_path=1
-let g:deoplete#enable_refresh_always = 1
-let g:deoplete#enable_ignore_case = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#enable_camel_case = 1
-let g:deoplete#omni#input_patterns = get(g:,'deoplete#omni#input_patterns',{})
-let g:tern_request_timeout = 1
 let g:tern_request_timeout = 6000
-let g:tern#command = ["tern"]
-let g:tern#arguments = [" — persistent"]
-let g:deoplete#max_list = 20
+
 "make the enter key select the suggested popup
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
@@ -286,15 +301,11 @@ set wildignore+=*.pyc,*.swp,*.DS_Store,*tags*,
 "Nerdtree config for wildignore
 let NERDTreeRespectWildIgnore=1
 
-let g:solarized_contrast="high"
-vim-colors-solarized
 set background=dark
-colorscheme solarized
-"vim-colors-solarized
 "lightline colorscheme
 set noshowmode
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'gruvbox',
       \ }
 
 augroup autoSourceMyvimrc
