@@ -12,9 +12,11 @@ Plugin 'scrooloose/nerdcommenter'
 "Plugin 'bf4/vim-dark_eyes'
 Plugin 'HenryNewcomer/vim-theme-papaya'
 Plugin 'morhetz/gruvbox'
+Plugin 'altercation/solarized'
+Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'zeis/vim-kolor'
 "status line
 Plugin 'itchyny/lightline.vim'
-
 "auto completion
 Plugin 'ervandew/supertab'
 "Plugin 'szw/vim-tags'
@@ -34,7 +36,7 @@ Plugin 'epilande/vim-react-snippets'
 Plugin 'kristijanhusak/vim-js-file-import'
 Plugin 'isRuslan/vim-es6'
 Plugin 'ternjs/tern_for_vim'
-
+Plugin 'kyoz/purify'
 Plugin 'tpope/vim-surround'
 Plugin 'alvan/vim-closetag'
 Plugin 'wesQ3/vim-windowswap'
@@ -43,3 +45,6 @@ Plugin 'wesQ3/vim-windowswap'
 Plugin 'w0rp/ale'
 "Plugin 'gryf/pylint-vim'
 "Plugin 'nvie/vim-flake8'
+"
+Plugin 'liuchengxu/vista.vim'
+

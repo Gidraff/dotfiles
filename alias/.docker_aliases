@@ -1,0 +1,14 @@
+# docker
+alias golang='$HOME/Projects/Private/go/src/github.com/Gidraff'
+alias dk='docker'
+alias dkl='docker logs'
+alias dklf='docker logs -f'
+alias dki='docker images'
+alias dks='docker services'
+alias dkrm='docker rm'
+alias dm='docker-machine'
+alias dmx='docker-machine ssh'
+alias j8='export JAVA_HOME=$JAVA_HOME8;'
+alias j12='export JAVA_HOME=$JAVA_HOME12;'
+alias ofiles='lsof -nP +c 15 | grep LISTEN'
+

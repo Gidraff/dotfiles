@@ -1,0 +1,5 @@
+# helm 
+alias h='helm'
+alias hi='helm install -f'
+alias hd='helm delete'
+alias hls='helm ls'
