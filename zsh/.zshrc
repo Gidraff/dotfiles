@@ -89,6 +89,7 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.git_aliases ] && source ~/.git_aliases
 [ -f ~/.helm_aliases ] && source ~/.helm_aliases
 [ -f ~/.docker_aliases ] && source ~/.docker_aliases
+[ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.zprofile ] && source ~/.zprofile
 
