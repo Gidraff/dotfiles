@@ -1,0 +1,25 @@
+make --dry-run --always-make --keep-going --print-directory
+usage: cp [-R [-H | -L | -P]] [-fi | -n] [-apvXc] source_file target_file
+       cp [-R [-H | -L | -P]] [-fi | -n] [-apvXc] source_file ... target_directory
+ 
+make: Entering directory `/Users/gidraffkaranja/dotfiles'
+echo "Creating backup directory at /Users/gidraffkaranja/dotfiles-bak"
+mkdir -p /Users/gidraffkaranja/dotfiles-bak
+for file1 in ; do\
+			filename=".'"; \
+			target="/Users/gidraffkaranja/"; \
+			if [ -f  ]; then\
+				echo "backing up "; \
+				cp  /Users/gidraffkaranja/dotfiles-bak; \
+			else \
+				 " does not exist at this location or is a symlink"; \
+			fi; done
+for filename in "/Users/gidraffkaranja/.config/nvim" "/Users/gidraffkaranja/.vim" "/Users/gidraffkaranja/.vimrc"; do\
+	 		if [ ! -L "" ]; then \
+				echo "backingi up "; \
+				\
+			else \
+				 " does not exist at this location or is a symlink"; \
+			fi; done
+make: Leaving directory `/Users/gidraffkaranja/dotfiles'
+ 

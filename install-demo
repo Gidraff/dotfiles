@@ -1,0 +1,158 @@
+#!/usr/bin/env bash
+log_file=~/install_progress_log.txt
+DOTFILES_DIR="$HOME/dotfiles"
+OH_MY_ZSH_DIR="$HOME/.oh-my-zsh"
+NVIM_CONFIG_DIR="$HOME/.config/nvim/"
+NVIM_CONFIG="$HOME/.config/nvim/init.vim"
+NVIM_CONFIG_PLUGINS="$HOME/.config/nvim/plugins.vim"
+TMUX_CONF="$HOME/.tmux.conf"
+TMUX_DIR="$HOME/.tmux"
+VIM_DIR="$HOME/.vim"
+VIMRC="$HOME/.vimrc"
+BAK_DIR="$HOME/dotfiles-bak"
+
+clean_(){
+    for file in $TMUX_CONF $TMUX_DIR $VIM_DIR $VIMRC $NVIM_CONFIG; do
+        if [ -f $file ] || [ -d $file ]; then
+            echo "cleaning up existing files."
+            sudo rm -rf $file
+        else
+            echo "$file does not exist"
+        fi
+    done
+}
+
+linux_(){
+    echo "Setting up Linux"
+    for pkg in tmux zsh neovim yarn npm curl shellcheck jsonlint yamllint ansible-lint; do
+        sudo apt upgrade -y
+        sudo apt update
+        sudo apt install $pkg -y
+        if [ type -p $pkg > /dev/null ]; then
+            echo "$pkg Installed" >> $log_file
+        else
+            echo "$pkg FAILED TO INSTALL!!!" >> $log_file
+        fi
+    done
+    
+    for mod in markdownlint-cli eslint jshint stylelint sass-lint typescript neovim; do
+        sudo npm install -g $mod
+    done
+    
+    for pkg in ruby ruby-dev python3-pip gem fuse libfuse2 git python3-pip ack-grep; do
+        sudo apt-get install $pkg -y
+    done
+    sudo pip3 install --user pycodestyle pyflakes flake8
+    sudo gem install neovim
+}
+
+macOs_(){
+    echo "Setting up MacOsx"
+    @/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew casks install iterm2 -x
+    
+    for pkg in zsh nvm tmux neovim yarn npm tflint ansible-lint tidy-html5 proselint write-good; do
+        brew install $pkg
+    done
+    
+    for mod in markdownlint-cli eslint jshint stylelint sass-lint neovim; do
+        yarn global add $mod
+    done
+    pip3 install --user pycodestyle pyflakes flake8
+    python3 -m pip install --user --upgrade pynvim
+    npm install -g typescript
+    sudo gem install neovim
+    
+}
+
+
+setup_vim() {
+    echo "... Setting up vim."
+    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    ln -sf $DOTFILES_DIR/vim $HOME/.vim
+    ln -sf $DOTFILES_DIR/vim/.vimrc $HOME/.vimrc
+}
+
+setup_tmux(){
+    echo "... Setting up tmux."
+    ln -sf $DOTFILES_DIR/tmux/ $HOME/.tmux
+    ln -sf $DOTFILES_DIR/tmux/.tmux.conf $HOME/.tmux.conf
+}
+
+
+setup_zsh(){
+    echo "... Setting up zsh"
+    ln -sf $DOTFILES_DIR/zsh/.zprofile $HOME/.zprofile
+    ln -sf $DOTFILES_DIR/zsh/.zshrc $HOME/.zshrc
+}
+# Create links
+
+setup_bash(){
+    echo "... Setting up bash"
+    ln -sf $DOTFILES_DIR/bash/.bashrc $HOME/.bashrc
+    ln -sf $DOTFILES_DIR/bash/.bash_profile $HOME/.bash_profile
+}
+
+setup_nvim(){
+    echo "... Setting up bash"
+    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    ln -sf $DOTFILES_DIR/config $HOME/.config
+    ln -sf $DOTFILES_DIR/neovim/init.vim  $HOME/.config/nvim/init.vim
+    ln -sf $DOTFILES_DIR//neovim/plugins.vim  $HOME/.config/nvim/plugins.vim
+}
+
+setup_symlinks(){
+    if type -p zsh > /dev/null; then
+        setup_zsh
+    else
+        echo "zsh setup failed!!!"
+    fi
+    if type -p bash > /dev/null; then
+        setup_bash
+    else
+        echo "bash FAILED TO INSTALL!!!"
+    fi
+    if type -p nvim > /dev/null; then
+        setup_nvim
+    else
+        echo "nvim setup failed!!!"
+    fi
+    if type -p vim > /dev/null; then
+        setup_vim
+    else
+        echo "vim setup failed!!!"
+    fi
+    if type -p tmux > /dev/null; then
+        setup_tmux
+    else
+        echo "tmux setup failed!!!"
+    fi
+}
+
+
+case "$1" in
+    cleanup)
+        clean_
+    ;;
+    linux)
+        linux_
+    ;;
+    macos)
+        macOs_
+    ;;
+    link)
+        setup_symlinks
+    ;;
+    all)
+        clean_
+        macOs_
+        linux_
+        setup_symlinks
+    ;;
+    *)
+        echo -e $"\nUsage: $(basename "$0") {cleanup|linux|macos|link|all}\n"
+        exit 1
+    ;;
+esac
+
+echo -e "Done."

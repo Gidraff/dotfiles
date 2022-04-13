@@ -1,5 +1,5 @@
 " Specify a directory for plugins
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/autoload/')
 " Load plugins here
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -11,6 +11,10 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'towolf/vim-helm'
 " Install Emmet
 Plug 'mattn/emmet-vim'
+" Icon for different file types
+Plug 'ryanoasis/vim-devicons'
+" Docker tools
+Plug 'kkvh/vim-docker-tools'
 " Add neodark
 Plug 'KeitaNakamura/neodark.vim'
 " Add night owl
@@ -22,6 +26,8 @@ Plug 'tomtom/tcomment_vim'
 "Add sensible
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
+" Docker tools
+Plug 'kkvh/vim-docker-tools'
 "Add syntastic
 Plug 'vim-syntastic/syntastic'
 Plug 'altercation/vim-colors-solarized'
@@ -37,7 +43,10 @@ Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 "Add rhubarb
 Plug 'tpope/vim-rhubarb'
-
+" Add Gitgutter
+Plug 'airblade/vim-gitgutter'
+" Add commentary
+Plug 'tpope/vim-commentary'
 Plug 'othree/xml.vim'
 "Add lightline
 Plug 'itchyny/lightline.vim'
@@ -60,6 +69,7 @@ Plug 'vim-scripts/groovy.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
 Plug 'hashivim/vim-terraform'
+Plug 'juliosueiras/vim-terraform-completion'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'elzr/vim-json'
 Plug 'stephpy/vim-yaml'
@@ -80,6 +90,23 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+"{{ TMUX
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+
+" Disable tmux navigator when zooming the Vim pane
+let g:tmux_navigator_disable_when_zoomed = 1
+
+" Write all buffers before navigating from Vim to tmux pane
+let g:tmux_navigator_save_on_switch = 2
+
+"{{ Mappings (map)
+"
+"{{ Set Options (set)
+
 " Show commits for every source line
 nnoremap <Leader>gb :Gblame<CR> " git blame
 nnoremap <Leader>gb :Gbrowse<CR>>
@@ -87,22 +114,21 @@ vnoremap <Leader>gb :Gbrowse<CR>
 nnoremap <Leader>gb :Gw<CR> " git add file
 
 
-" lightline statusbar
+"{{ lightline statusbar
 set laststatus=2
 if !has('gui_running')
   set t_Co=256
 endif
 
-" Nerdtree
+"{{ Nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 map c I//<Space><ESC>=<CR>
 " Airline theme
-
 "let g:airline_theme='one'
 "syntax enable
-colorscheme onedark
+colorscheme gruvbox 
 "highlight Normal ctermbg=None
 "highlight LineNr ctermfg=DarkGrey
 
@@ -127,6 +153,8 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:netrw_banner = 0
 set termguicolors
 
+set autoread
+au FocusGained,BufEnter * :checktime
 " the configuration options should be placed before `colorscheme miramare`
 let g:miramare_enable_italic = 1
 let g:miramare_disable_italic_comment = 1
@@ -147,6 +175,7 @@ set rtp+=/usr/local/opt/fzf
 
 syntax on
 set nu
+set rnu
 set wrapmargin=5
 set ruler
 set pyxversion=3

@@ -1,0 +1,399 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+ 
+
+# Make data base, printed on Tue Nov  2 21:55:04 2021
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# makefile (from `Makefile', line 12)
+VIMRC := /Users/gidraffkaranja/.vimrc
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+LC_CTYPE = UTF-8
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+NVM_INC = /Users/gidraffkaranja/.nvm/versions/node/v12.22.0/include/node
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+ARCHFLAGS = -arch x86_64
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/gidraffkaranja/dotfiles
+# makefile
+ 
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 21)
+COLOR_PURPLE = $(echo -e "\033[1;35m")
+# makefile (from `Makefile', line 53)
+config_nvim_init = 	$(shell touch $(NVIM_CONFIG))
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# makefile (from `Makefile', line 3)
+COPY := cp
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# makefile (from `Makefile', line 17)
+COLOR_GRAY = $(echo -e "\033[1;38;5;243m")
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/xl/1h64gx3961v9_1083591949r0000gn/T/vscode-ipc-cfb4ad3c-94d6-4442-ab7f-0e362121d6a0.sock
+# environment
+VSCODE_CWD = /Users/gidraffkaranja/dotfiles
+# environment
+ANDROID_SDK = /Users/gidraffkaranja/Library/Android/sdk
+# environment
+PATH = /Users/gidraffkaranja/Library/Android/sdk/platform-tools:/Users/gidraffkaranja/.nvm/versions/node/v12.22.0/bin:/Users/gidraffkaranja/Library/Android/sdk/platform-tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/Users/gidraffkaranja/Library/Android/sdk/emulator:/Users/gidraffkaranja/Library/Android/sdk/tools:/Users/gidraffkaranja/Library/Android/sdk/tools/bin:/Users/gidraffkaranja/Library/Android/sdk/platform-tools:/Users/gidraffkaranja/Projects/DevCode/go/bin:/usr/local/sbin:/usr/local/bin/eslint:/usr/local/bin/atom:/usr/local/bin/apm:/Users/gidraffkaranja/bin:/Users/gidraffkaranja/.rvm/bin:/Users/gidraffkaranja/.fzf/bin:/Users/gidraffkaranja/Library/Android/sdk/emulator:/Users/gidraffkaranja/Library/Android/sdk/tools:/Users/gidraffkaranja/Library/Android/sdk/tools/bin:/Users/gidraffkaranja/Library/Android/sdk/platform-tools:/Users/gidraffkaranja/Projects/DevCode/go/bin:/usr/local/sbin:/usr/local/bin/eslint:/usr/local/bin/atom:/usr/local/bin/apm:/Users/gidraffkaranja/bin:/Users/gidraffkaranja/.rvm/bin
+# makefile (from `Makefile', line 19)
+COLOR_GREEN = $(echo -e "\033[1;32m")
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+GOPATH = /Users/gidraffkaranja/Projects/DevCode/go
+# environment
+NVM_BIN = /Users/gidraffkaranja/.nvm/versions/node/v12.22.0/bin
+# environment
+LaunchInstanceID = B45F34BD-F80E-4A39-9A6A-D026DD0548A2
+# environment
+VSCODE_LOG_STACK = false
+# makefile (from `Makefile', line 11)
+TMUX_CONF := /Users/gidraffkaranja/.tmux.conf
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+ANDROID_HOME = /Users/gidraffkaranja/Library/Android/sdk
+# environment
+ATOM_PATH = /Applications/Development/Atom.app
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.gEG0pWHXOx/Listeners
+# automatic
+%F = $(notdir $%)
+# makefile (from `Makefile', line 20)
+COLOR_RED = $(echo -e "\033[1;31m")
+# makefile (from `Makefile', line 10)
+DOTFILE_NVIM_PLUGIN := /Users/gidraffkaranja/dotfiles/neovim/nvim/plugins.vim
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /Users/gidraffkaranja/dotfiles
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# makefile (from `Makefile', line 6)
+NVIM_CONFIG_DIR := /Users/gidraffkaranja/neovim/nvim/
+# environment
+MANPATH = /usr/local/man:/Users/gidraffkaranja/.nvm/versions/node/v12.22.0/share/man:/usr/local/man:
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+HOME = /Users/gidraffkaranja
+# makefile (from `Makefile', line 1)
+DOTFILES := /Users/gidraffkaranja/dotfiles
+# default
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/gidraffkaranja/Library/Application Support/Code/CachedData/6cba118ac49a1b88332f312a8f67186f7f3c1643
+# environment
+LOGNAME = gidraffkaranja
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+NVM_CD_FLAGS = -q
+# environment
+ZSH = /Users/gidraffkaranja/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile (from `Makefile', line 2)
+MKDIR := mkdir -p
+# makefile (from `Makefile', line 4)
+COPYR := cp -rf
+# makefile (from `Makefile', line 8)
+DOTFILE_NVIM_CONFIG := /Users/gidraffkaranja/dotfiles/neovim/nvim/init.vim
+# makefile (from `Makefile', line 22)
+COLOR_YELLOW = $(echo -e "\033[1;33m")
+# makefile (from `Makefile', line 5)
+OH_MY_ZSH_DIR := /Users/gidraffkaranja/.oh-my-zsh
+# environment
+XPC_FLAGS = 0x0
+# environment
+COLORTERM = truecolor
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+LC_TERMINAL = iTerm2
+# environment
+SHLVL = 3
+# environment
+SSH_KEY_PATH = ~/.ssh/rsa_id
+# environment
+JAVA_HOME = /Library/Java/JavaVirtualMachines/openjdk-14.jdk/Contents/Home
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = gidraffkaranja
+# makefile
+.DEFAULT_GOAL := backup
+# default
+MAKECMDGOALS := all
+# environment
+TERM_SESSION_ID = w1t0p0:33726CFE-CAC6-44B7-BD07-47CE5F00BC0F
+# makefile (from `Makefile', line 47)
+define create_vimrc
+	$(sh [ ! -f $(VIMRC) ] && $(file > $(VIMRC)))
+	$(sh ./install)
+	$(sh touch $(VIMRC) && $(sh ./install))
+endef
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# makefile (from `Makefile', line 7)
+NVIM_CONFIG := /Users/gidraffkaranja/neovim/init.vim
+# environment
+TERM_PROGRAM = iTerm.app
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/xl/1h64gx3961v9_1083591949r0000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/gidraffkaranja/Library/Application Support/Code/1.61.2-main.sock
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+TERM_PROGRAM_VERSION = 3.4.12
+# environment
+NVM_DIR = /Users/gidraffkaranja/.nvm
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.35667658.35667664.D9B9F6D4-C336-431B-A144-804541A6A507
+# environment
+LC_TERMINAL_VERSION = 3.4.12
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+ITERM_SESSION_ID = w1t0p0:33726CFE-CAC6-44B7-BD07-47CE5F00BC0F
+# makefile (from `Makefile', line 18)
+COLOR_BLUE = $(echo -e "\033[1;34m")
+# environment
+COLORFGBG = 7;0
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# makefile (from `Makefile', line 23)
+COLOR_NONE = $(echo -e "\033[0m")
+# automatic
+<F = $(notdir $<)
+# environment
+ITERM_PROFILE = Default
+# environment
+EDITOR = vim
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# environment
+SECURITYSESSIONID = 186aa
+# automatic
+^F = $(notdir $^)
+# makefile (from `Makefile', line 9)
+NVIM_CONFIG_PLUGINS := /Users/gidraffkaranja/neovim/nvim/plugins.vim
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+ 
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# makefile (from `Makefile', line 13)
+BAK_DIR := /Users/gidraffkaranja/dotfiles-bak
+# environment
+VSCODE_PID = 64809
+# variable set hash-table stats:
+# Load=116/1024=11%, Rehash=0, Collisions=8/165=5%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777221, inode 1314667): 20 files, no impossibilities.
+# /Users/gidraffkaranja/neovim: could not be stat'd.
+# /Users/gidraffkaranja (device 16777221, inode 1123982): 132 files, no impossibilities.
+
+# 152 files, no impossibilities in 3 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+all:
+#  Command-line target.
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := all
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=3/16=19%
+#  commands to execute (from `Makefile', line 60):
+	echo "Setting up macOsx"
+	@/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	@brew casks install iterm2 -x
+	$(if [ -d $(OH_MY_ZSH_DIR) ],$(upgrade_oh_my_zsh),echo "file doesn't exist")
+	brew install zsh nvm tmux neovim yarn npm
+	$(nvm install 12.22.0 14.17.0)
+	$(sh -c "upgrade_oh_my_zsh")
+	# Install fonts
+	brew tap homebrew/cask-fonts
+	brew install --cask font-hack-nerd-font font-fira-code
+	# Add linting
+	brew install vint shellcheck jsonlint yamllint
+	brew install tflint ansible-lint tidy-html5 proselint write-good
+	yarn global add markdownlint-cli eslint jshint stylelint sass-lint
+	pip3 install --user pycodestyle pyflakes flake8
+	python3 -m pip install --user --upgrade pynvim
+	yarn global add neovim
+	npm install -g typescript
+	sudo gem install neovim
+	$(./install)
+	
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2021-10-30 12:12:58
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+configr:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 110):
+	@echo "Failed to get folder. Creating nvim folder."
+	$(shell mkdir -p $(NVIM_CONFIG_DIR))
+	$(call config_nvim_init,)
+	@echo "File doesn't exist."
+	@echo "Creating vimrc file"
+	$(file > $(VIMRC))
+	@echo "Creating Tmux file"
+	$(file > $(TMUX_CONF))
+	#$(call config_nvim_file)
+	
+
+backup:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 27):
+	@echo "Creating backup directory at ${BAK_DIR}"
+	${MKDIR} ${BAK_DIR}
+	@for file1 in $(find -H "${DOTFILES}" -maxdepth 3 -name '*.symlink'); do\
+	filename=".$(basename $(file1) '.symlink')"; \
+	target="${HOME}/${filename}"; \
+	if [ -f ${target} ]; then\
+	echo "backing up ${filename}"; \
+	${COPY} ${target} ${BAK_DIR}; \
+	else \
+	${COLOR_YELLOW} "${filename} does not exist at this location or is a symlink"; \
+	fi; done
+	for filename in "$(HOME)/.config/nvim" "$(HOME)/.vim" "$(HOME)/.vimrc"; do\
+	if [ ! -L "$(filename)" ]; then \
+	echo "backingi up $(filename)"; \
+	$(shell cp -rf $(filename) $(BAK_DIR))\
+	else \
+	${COLOR_YELLOW} "${filename} does not exist at this location or is a symlink"; \
+	fi; done
+	
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=6/1024=1%, Rehash=0, Collisions=0/20=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Tue Nov  2 21:55:04 2021
+
+ 

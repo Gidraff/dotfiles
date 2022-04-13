@@ -1,7 +1,14 @@
+"to see file-type icons on file names, install ITerm Nerd fonts
+"brew tap caskroom/fonts
+"brew cask install font-hack-nerd-font
+"then change your ITerm2 Non-ASCII font to Hack Regular Nerd Font Complete
 syntax on
-
+set nornu
+""""Note to self
 "set rtp+=~/.vim/bundle/Vundle.vim
+
 call plug#begin('~/.local/share/nvim/plugged')
+
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -10,7 +17,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
 Plug 'morhetz/gruvbox'
-Plug 'neovim/nvim-lsp'
 Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
@@ -18,72 +24,76 @@ Plug 'zchee/deoplete-jedi'
 Plug 'mattn/emmet-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
+Plug 'ludovicchabant/vim-gutentags'
+" Ansible
+Plug 'pearofducks/ansible-vim'
+" Nginx
+Plug 'chr4/nginx.vim'
+" log highlighting
+Plug 'mtdl9/vim-log-highlighting'
+Plug 'towolf/vim-helm'
+" Tmux 
+Plug 'tmux-plugins/vim-tmux'
+" to-do comments
+Plug 'nvim-lua/plenary.nvim'
+Plug 'folke/todo-comments.nvim'
+" Editor config
+Plug 'editorconfig/editorconfig-vim'
+" Vim mundo
+Plug 'simnalamburt/vim-mundo'
+" Vista
+Plug 'liuchengxu/vista.vim'
+" treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+" Neoscroll
+Plug 'karb94/neoscroll.nvim'
+" Neoformat
+Plug 'sbdchd/neoformat'
+" Pop up
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'avelino/vim-bootstrap-updater'
-" Terraform
-Plug 'hashivim/vim-terraform'
-Plug 'vim-syntastic/syntastic'
-Plug 'juliosueiras/vim-terraform-completion'
-
-
 " javascript
 Plug 'jelera/vim-javascript-syntax'
 " python
 Plug 'davidhalter/jedi-vim'
+" Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+" FZF
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
+"silence  powerline error on python 3.7
 if has('python3')
   silent! python3 1
 endif
 
-" so  ~/.config/nvim/plugins.vim
+so  ~/.config/nvim/plugins.vim
 call plug#end()            
-" required
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-    \ }
+
 "filetype plugin indent on    " required
 let mapleader=',' "make comma the mapleader
+
+" Enable emmet just for html/css
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
 "show filename on status line
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-" Syntastic Config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-set statusline=%t
-set number relativenumber
-" toggle ralative line numbers
-
-set shell=/bin/zsh
-
-nmap <leader>rn :set relativenumber!<CR>
-nmap <leader>tn :set relativenumber!<CR>
-nmap <leader>a :q<CR>
-"automatically toggle relative numbers on different situeations
-""when in insert mode or buffer loses focus, turn off relative number
-
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
+" Using Lua functions
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 set foldmethod=syntax
 "set this for fuzzy explorer
-
 set hidden
 "colorscheme atom-dark-256  "gruvbox
 set background=dark
@@ -95,39 +105,37 @@ set autochdir
 
 "specify buffers for autocomplete
 set complete=.,w,b,u
-
 "settings for auto saving files
-let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save = 0  " enable AutoSave on Vim startup
 let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
 let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 let g:netrw_liststyle = 3
-"
+
 "white space
 set backspace=eol,start,indent
 set wrap
 set linebreak
 set textwidth=79
 set number
-
 "default number of spaces for tabs
+
 set expandtab ts=2 sw=2 ai
 "number of spaces when edditing specific files
-
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype python setlocal ts=4 sw=4 expandtab
 autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
 autocmd Filetype typescript setlocal ts=2 sw=2 expandtab
+"flag any whitespace in a python file
 
 "searching
 set hlsearch
 set incsearch
 let g:ags_agexe = 'ag'
-
 "live substitution"
 set inccommand=nosplit
 
-set showmatch
 set ignorecase
+set showmatch
 set smartcase
 
 noremap <F5> :grep <C-R><C-W> *<CR>
@@ -156,6 +164,14 @@ nmap <leader>w :w<cr>
 "move a line up/down on normal mode
 noremap <Up> :m .-2<CR>==
 noremap <Down> :m .+1<CR>==
+"noremap <Left> <NOP>
+"noremap <Right> <NOP>
+"do nothing in insert mode
+"imap <Up> <NOP>
+"imap <Down> <NOP>
+"imap <Left> <NOP>
+"imap <Right> <NOP>
+"move selected lines up/down in visual mode
 vmap <Up> :m '<-2<CR>gv=gv
 vmap <Down> :m '>+1<CR>gv=gv
 
@@ -168,7 +184,6 @@ imap <leader>( ()<ESC>i
 imap <leader>< <><ESC>i
 imap jj <ESC>
 imap kk <ESC>
-
 "terminal mode mappings
 "map Esc to switch back to normal mode
 tnoremap <ESC> <C-\><C-n>
@@ -248,17 +263,18 @@ autocmd User Node
 let g:closetag_emptyTags_caseSensitive = 1
 " Shortcut for closing tags, default is '>'
 
-"gutentags settings
 "when opening a file in a project that has no tags file, let Gutentags auto-generate that tags file.
-let g:gutentags_generate_on_missing = 1
-let g:gutentags_generate_on_new = 1
-let g:gutentags_generate_on_write = 1
+" let g:gutentags_generate_on_missing = 1
+" let g:gutentags_generate_on_new = 1
+" let g:gutentags_generate_on_write = 1
+" let g:gutentags_project_root = ['.root']
 " enable gtags module
-let g:gutentags_modules = ['ctags', 'gtags_cscope']
+" let g:gutentags_modules = ['ctags', 'gtags_cscope']
 " config project root markers.
-let g:gutentags_project_root = ['.root']
+
 " generate datebases in my cache directory, prevent gtags files polluting my project
-let g:gutentags_cache_dir = expand('~/.cache/tags')
+" let g:gutentags_cache_dir = expand('~/.cache/tags')
+"gutentags settings
 "
 " Trigger configuration (Optional)
 let g:UltiSnipsExpandTrigger='<c-l>'
@@ -266,9 +282,9 @@ let g:UltiSnipsJumpForwardTrigger='<c-b>'
 let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 let g:tern_request_timeout = 6000
 
+
 "make the enter key select the suggested popup
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
 imap ;d <div className=''><ESC>li
 imap ;p <p>
 imap ;a <a href=''><ESc>hi
@@ -283,13 +299,11 @@ imap ;sp <span><ESC>li
 imap ;i <input type='text' placeholder=''><ESC>2hi
 imap ;bt <button className=''><ESC>li
 imap ;im import  from '';<ESC>8hi
-
 "importing objects
 imap ;cim import {  } from '';<ESC>10hi
 
 "Invoke CtrlP with starting directory
 nmap <leader>p <C-p>
-
 " ignore git files, node_modules and bower_components
 " it will load faster this way
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -297,8 +311,12 @@ let g:ctrlp_custom_ignore = 'node_modules\|bower_compnents\|DS_Store\|git'
 
 "make Gdiff always open vertical splits
 set diffopt+=vertical
-set wildignore+=*.pyc,*.swp,*.DS_Store,*tags*,
 
+set wildignore+=*.pyc,*.swp,*.DS_Store,*tags*,
+"Nerdtree config for wildignore
+let NERDTreeRespectWildIgnore=1
+
+set background=dark
 "lightline colorscheme
 set noshowmode
 let g:lightline = {
