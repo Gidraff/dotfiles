@@ -24,6 +24,22 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "Add tcomment
 Plug 'tomtom/tcomment_vim'
 "Add sensible
+
+" C++
+Plug 'octol/vim-cpp-enhanced-highlight'
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+let g:cpp_no_function_highlight = 1
+
+Plug 'rhysd/vim-clang-format'
+"let g:clang_format#auto_format = 1
+"autocmd FileType c,cpp,objc ClangFormatAutoEnable
+
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 " Docker tools
@@ -50,6 +66,10 @@ Plug 'tpope/vim-commentary'
 Plug 'othree/xml.vim'
 "Add lightline
 Plug 'itchyny/lightline.vim'
+
+
+
+
 
 "Add fzf
 Plug '/usr/local/opt/fzf'
@@ -89,6 +109,10 @@ endif
 if (has("termguicolors"))
   set termguicolors
 endif
+
+" Indenting
+" FileType plugin indent on
+set expandtab ts=4 sw=4 ai
 
 "{{ TMUX
 let g:tmux_navigator_no_mappings = 1
