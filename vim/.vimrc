@@ -152,7 +152,7 @@ map c I//<Space><ESC>=<CR>
 " Airline theme
 "let g:airline_theme='one'
 "syntax enable
-colorscheme gruvbox 
+colorscheme solarized 
 "highlight Normal ctermbg=None
 "highlight LineNr ctermfg=DarkGrey
 
