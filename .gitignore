@@ -1,3 +1,5 @@
 .vim/swaps/
 *.swp
 tags
+.vscode/
+.DS_Store

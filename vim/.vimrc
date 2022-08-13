@@ -23,8 +23,10 @@ Plug 'haishanh/night-owl.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "Add tcomment
 Plug 'tomtom/tcomment_vim'
-"Add sensible
-
+"typescript
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'ryanolsonx/vim-lsp-typescript'
 " C++
 Plug 'octol/vim-cpp-enhanced-highlight'
 let g:cpp_class_scope_highlight = 1
@@ -66,11 +68,8 @@ Plug 'tpope/vim-commentary'
 Plug 'othree/xml.vim'
 "Add lightline
 Plug 'itchyny/lightline.vim'
-
-
-
-
-
+" wakatime plugin
+Plug 'wakatime/vim-wakatime'
 "Add fzf
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -120,6 +119,14 @@ nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+
+" Typescript settings
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
 
 " Disable tmux navigator when zooming the Vim pane
 let g:tmux_navigator_disable_when_zoomed = 1
